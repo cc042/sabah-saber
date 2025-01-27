@@ -1,0 +1,746 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo+Play:wght@200..1000&display=swap');
+
+/* ALL */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+/* Variables */
+:root {
+    --mff: "Cairo Play";
+    --sff: "Rubik";
+
+    /* Traditional */
+    --Green: rgb(0, 128, 0);
+    --Gold: rgb(255, 215, 0);
+    --Black: rgb(0, 0, 0);
+    --White: rgb(255, 255, 255);
+
+    /* Modern and Elegant Colors */
+    --Navy-Blue: rgb(0, 0, 128);
+    --Soft-Gray: rgb(128, 128, 128);
+    --Cream: rgb(255, 240, 200);
+}
+
+/* Animations */
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes updown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes leftright {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes rightleft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes spin1 {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    25% {
+        transform: rotateZ(0deg);
+    }
+
+    50% {
+        transform: rotateZ(180deg);
+    }
+
+    75% {
+        transform: rotateZ(180deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes spin2 {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    25% {
+        transform: rotateZ(180deg);
+    }
+
+    50% {
+        transform: rotateZ(180deg);
+    }
+
+    75% {
+        transform: rotateZ(360deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+/* loader */
+.Load {
+    height: 100vh;
+    overflow: hidden;
+    margin: auto;
+    position: fixed;
+    z-index: 9999;
+}
+
+.Load::backdrop {
+    background-color: rgba(100, 100, 100, 0.9);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
+}
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.quater {
+    height: 1.5cm;
+    width: 1.5cm;
+    background-color: skyblue;
+    float: left;
+    position: relative;
+    bottom: 1.25cm;
+}
+
+.i {
+    border-top-left-radius: 100%;
+    animation: spin1 2s ease-in-out infinite;
+    transform-origin: 1.5cm 1.5cm;
+}
+
+.ii {
+    border-top-right-radius: 100%;
+    animation: spin2 2s ease-in-out infinite;
+    transform-origin: 0 1.5cm;
+}
+
+/* HTML */
+html {
+    width: 100vw;
+    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
+    font-size: 16px;
+    font-family: var(--sff);
+    overflow-x: hidden;
+}
+
+/* body */
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/* ANY ANCHOR TAG */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* ANY DIALOG WHEN IT OPENS */
+dialog {
+    margin: auto;
+
+    /* Add display */
+    transition: opacity 0.7s ease-in, display 0.7s ease-in;
+
+    /* Add transition-behavior */
+    transition-behavior: allow-discrete;
+
+    /* Style when open */
+    opacity: 1;
+}
+
+/* The style when closed */
+@starting-style {
+    dialog {
+        opacity: 0;
+    }
+}
+
+/* The style when closed */
+dialog:not([open]) {
+    opacity: 0;
+}
+
+/* ANY BACKDROP DIALOG */
+dialog::backdrop {
+    backdrop-filter: blur(10px);
+}
+
+/* ANY INPUT WITH TYPE RADIO */
+input[type="radio"] {
+    display: none;
+}
+
+/* ANY IMAGE OR SVG OR VIDEO */
+img,
+svg,
+video {
+    pointer-events: none;
+}
+
+/* ANY BUTTONS */
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* ANY TEXTAREA */
+textarea {
+    resize: none;
+    font-family: var(--mff);
+}
+
+/* WEBKIT SCROLL-BAR */
+::-webkit-scrollbar-corner {
+    width: 0px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--Navy-Blue);
+}
+
+
+/* Follows */
+.Follows {
+    margin: auto;
+    height: max-content;
+    width: 90vw;
+    border-radius: 20px;
+    z-index: 999;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.followsitems {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.followHeader {
+    display: flex;
+    gap: 15px;
+}
+
+.socials {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.social-item {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid;
+    border-radius: 15px 0;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 0 10px var(--Black);
+        border-color: var(--Gold);
+    }
+}
+
+.social-item a {
+    font-size: 1.2rem;
+    font-weight: 600
+}
+
+.social-item a::before {
+    width: 0;
+    height: 0;
+    background: none;
+}
+
+.Followsclose {
+    background: var(--Cream);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Contact Us */
+.callus {
+    margin: auto;
+    height: max-content;
+    width: 90vw;
+    border-radius: 20px;
+    z-index: 999;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.callusitems {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.callusHeader {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.callusclose {
+    background: var(--Cream);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.numbers {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 20px;
+    width: 100%;
+}
+
+.number {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    gap: 10px;
+    border: 2px solid;
+    border-radius: 15px 0;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+        transform: translateY(-7px);
+        box-shadow: 0 0 10px var(--Black);
+        border-color: var(--Gold);
+    }
+}
+
+.number a {
+    width: 100%;
+}
+
+/* estefsar */
+#estefsar {
+    margin: auto;
+    width: 90vw;
+    height: 90vh;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+}
+
+.close {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.estefsarclose {
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--Cream);
+}
+
+.estefsarname {
+    display: flex;
+    flex-direction: row;
+}
+
+.estefsaritems {
+    height: 79%;
+    margin-top: 10px;
+}
+
+.estefsarsend {
+    width: 100%;
+    background: var(--Cream);
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: var(--sff);
+    font-weight: 700;
+}
+
+#estefsartext {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: var(--Cream);
+    padding: 10px;
+    font-size: 20px;
+}
+
+.additions {
+    display: none;
+}
+
+/* Side Bar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    height: 100dvh;
+    width: 100dvw;
+}
+
+.sidebar[aria-opened="false"] {
+    left: -100%;
+}
+
+.sidebar[aria-opened="true"] {
+    left: 0;
+}
+
+.sidebarwrapper {
+    border-radius: 20px 0 0 20px;
+    padding: 20px;
+    height: 100%;
+    width: max-content;
+    background: var(--Black);
+    transition: all 0.7s ease;
+}
+
+.sidebarheader {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    color: var(--White);
+}
+
+.sidebarclose {
+    border-radius: 10px;
+    background: var(--Cream);
+    padding: 10px;
+}
+
+.sidebarcontent {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebarcontent ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: max-content;
+    gap: 15px;
+}
+
+.sidebarcontent button {
+    width: 300px;
+    color: black;
+    background: var(--White);
+    border-radius: 10px;
+    padding: 15px 15px
+}
+
+/* header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.rightdevsection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rightdevsection>img {
+    border-radius: 20px;
+}
+
+.leftdevsection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leftdevsection ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.FollowMe,
+.contact,
+.estefsar {
+    font-size: 25px;
+    background: none;
+    font-family: var(--sff);
+    font-weight: 700;
+    transition: 1s;
+    position: relative;
+    display: inline-block
+}
+
+.leftdevsection ul li button::before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    background: var(--Green);
+    height: 3px;
+    width: 0%;
+    transition: 0.3s ease-in-out;
+}
+
+.leftdevsection ul li button:hover::before {
+    width: 100%;
+}
+
+.hidden,
+.screen_tabs {
+    display: none;
+}
+
+.screen_condition {
+    background: none;
+}
+
+/* navbar */
+.tabs {
+    border-bottom: 3px solid var(--Gold);
+    border-top: 3px solid var(--Gold);
+    width: 100%;
+    height: 120px;
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.tab-label {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: var(--sff);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tab-label:hover {
+    background: var(--Gold);
+}
+
+.active {
+    display: inline;
+    animation: fade 1s ease 1 alternate;
+}
+
+section:not(.active) {
+    display: none;
+}
+
+/* headers */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 10px 0 0;
+    order: 2;
+}
+
+
+/* Media Querys */
+@media screen and (max-width:930px) {
+    .surahs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width:781px) {
+    .tabs {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width:685px) {
+    .surahs {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width:625px) {
+    .tabs {
+        grid-template-columns: repeat(2, 1fr);
+        height: max-content;
+    }
+
+    .tab-label {
+        height: 50px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:520px) {
+    #prayer {
+        width: 90vw;
+    }
+
+    .prayers {
+        padding: 10px 10px 70px 10px;
+    }
+
+    .socials,
+    .numbers {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .callus,
+    .Follows {
+        max-height: 90vh;
+    }
+}
+
+@media screen and (max-width:587px) {
+    .leftdevsection {
+        display: none;
+    }
+
+    .hidden {
+        display: inline;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .additions {
+        display: inline;
+    }
+
+    .estefsarname {
+        display: none;
+    }
+}
+
+@media screen and (max-width:440px) {
+
+    .surahInputWrapper,
+    .countryInputWrapper,
+    .showall {
+        width: 93vw;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:400px) {
+    #counter_azkar {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width:385px) {
+    .additions {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:313px) {
+
+    .surahInputWrapper>input {
+        font-size: 20px;
+    }
+
+    .status {
+        font-size: 15px;
+    }
+
+    #two {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:292px) {
+    .additions {
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>أ.د صباح صابر حسين شحاتة</title>
+
+    <!-- Libraries -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="icon" href="assets/headers_assets/belief.png"> -->
+
+    <!-- Scripts -->
+    <script src="JS/index.js" defer></script>
+    <script src="JS/Responsive.js" defer></script>
+    <script src="JS/services.js" defer></script>
+    <script src="JS/tabs.js" defer></script>
+</head>
+
+<body>
+    <!-- Loading Dialog -->
+    <dialog class="Load" open>
+        <div class="loader">
+            <div class="quater ii"></div>
+            <div class="quater i"></div>
+        </div>
+    </dialog>
+
+    <!-- Inquiry Dialog -->
+    <dialog id="estefsar">
+        <div class="close">
+            <button class="estefsarclose" aria-label="Close Inquiry" id="close-button">
+                <img src="assets/icons/close.svg" alt="إغلاق">
+            </button>
+            <div class="estefsarname">
+                <video src="assets/icons/phone.mp4" autoplay loop muted width="40" height="40"
+                    aria-label="Inquiry Video"></video>
+                <h1>قسم الاستفسارات</h1>
+            </div>
+            <h1 class="additions">قسم الاستفسارات</h1>
+        </div>
+        <div class="estefsaritems">
+            <textarea id="estefsartext" placeholder="ما الذي تريد الاستفسار عنه"></textarea>
+            <button type="submit" class="estefsarsend">إرسال الاستفسار</button>
+        </div>
+    </dialog>
+
+    <!-- Follow Us Dialog -->
+    <dialog class="Follows">
+        <div class="followsitems">
+            <div class="followHeader">
+                <button class="Followsclose" aria-label="Close Follow Us" id="close-button">
+                    <img src="assets/icons/close.svg" alt="إغلاق">
+                </button>
+                <h1>الحسابات</h1>
+            </div>
+            <div class="socials">
+                <div class="social-item">
+                    <img src="assets/icons/youtube.svg" alt="YouTube" width="32" height="32">
+                    <a href="https://youtube.com/@unknown_user.395" target="_blank">YouTube</a>
+                </div>
+                <div class="social-item">
+                    <img src="assets/icons/instagram.svg" alt="Instagram" width="32" height="32">
+                    <a href="https://www.instagram.com/islam_yourguide/profilecard" target="_blank">Instagram</a>
+                </div>
+                <div class="social-item">
+                    <img src="assets/icons/twitter.svg" alt="Twitter" width="32" height="32">
+                    <a href="https://www.twitter.com/" target="_blank">Twitter</a>
+                </div>
+                <div class="social-item">
+                    <img src="assets/icons/tik-tok.png" alt="TikTok" width="32" height="32">
+                    <a href="https://www.tiktok.com/" target="_blank">TikTok</a>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Call Us Dialog -->
+    <dialog class="callus">
+        <div class="callusitems">
+            <div class="callusHeader">
+                <button class="callusclose" aria-label="Close Call Us" id="close-button">
+                    <img src="assets/icons/close.svg" alt="إغلاق">
+                </button>
+                <h1>أتصل بى</h1>
+            </div>
+            <div class="numbers">
+                <div class="number">
+                    <a href="tel:+201278838864">أ.د صباح صابر حسين شحاتة</a>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Side Bar -->
+    <div class="sidebar" aria-opened="false">
+        <div class="sidebarwrapper">
+            <div class="sidebarheader">
+                <button class="sidebarclose"><img src="assets/icons/close.svg" alt="إغلاق"></button>
+                <h1>أ.د صباح صابر حسين شحاتة</h1>
+            </div>
+
+            <div class="sidebarcontent">
+                <ul>
+                    <li><button class="contact" id="open-button">اتصل بنا</button></li>
+                    <li><button class="FollowMe" id="open-button">تابعني</button></li>
+                    <li><button class="estefsar" id="open-button">استفسار</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="rightdevsection">
+            <img src="" alt="Logo" width="60">
+            <h1>أ.د صباح صابر</h1>
+        </div>
+        <div class="leftdevsection">
+            <ul>
+                <li><button class="contact" id="open-button">اتصل بنا</button></li>
+                <li><button class="FollowMe" id="open-button">تابعني</button></li>
+                <li><button class="estefsar" id="open-button">استفسار</button></li>
+            </ul>
+        </div>
+        <div class="hidden">
+            <button class="screen_condition">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 512 512">
+                    <path
+                        d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Tabs Navigation -->
+    <nav class="tabs">
+        <input type="radio" id="tab1" name="tab" class="tab">
+        <input type="radio" id="tab2" name="tab" class="tab">
+        <input type="radio" id="tab3" name="tab" class="tab">
+        <input type="radio" id="tab4" name="tab" class="tab">
+        <input type="radio" id="tab5" name="tab" class="tab">
+
+        <label for="tab1" class="tab-label" id="one">البيانات الشخصية</label>
+        <label for="tab2" class="tab-label" id="two">المؤهلات العلمية</label>
+        <label for="tab3" class="tab-label" id="three">الرتبة الأكاديمية</label>
+        <label for="tab4" class="tab-label" id="four">الخبرات العلمية</label>
+        <label for="tab5" class="tab-label" id="five">الانتاج العلمى</label>
+    </nav>
+
+    <!-- Main Tab Content -->
+    <main>
+        <section class="HolyQuran" id="content1">
+            <div class="header">
+                <video src="assets/header_images/folder.mp4" width="50" autoplay>
+                    <source src="assets/header_images/folder.mp4">
+                </video>
+                <h2>البيانات الشخصية</h2>
+            </div>
+        </section>
+
+        <section class="NamesOfAllah" id="content2">
+            <div class="header">
+                <img src="assets/header_images/document.png" alt="" width="50">
+                <h2>المؤهلات العلمية</h2>
+            </div>
+        </section>
+
+        <section class="Counter" id="content3">
+            <div class="header">
+                <img src="assets/header_images/education.png" alt="" width="50">
+                <h2>الرتبة الأكاديمية</h2>
+            </div>
+        </section>
+
+        <section class="pray" id="content4">
+            <div class="header">
+                <img src="assets/header_images/research.png" alt="" width="50">
+                <h2>الخبرات العلمية</h2>
+            </div>
+        </section>
+
+        <section class="projects" id="content5">
+            <div class="header">
+                <img src="assets/header_images/design-software.png" alt="" width="50">
+                <h2>الانتاج العلمى</h2>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
