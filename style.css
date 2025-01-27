@@ -260,7 +260,6 @@ textarea {
     background: var(--Navy-Blue);
 }
 
-
 /* Follows */
 .Follows {
     margin: auto;
@@ -606,7 +605,7 @@ header {
     transition: 0.3s;
 }
 
-.tab-label:hover {
+.tabs>.tab-label:hover {
     background: var(--Gold);
 }
 
@@ -617,6 +616,22 @@ header {
 
 section:not(.active) {
     display: none;
+}
+
+.screentabs {
+    height: 70px;
+    border-radius: 20px 20px 0 0;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    bottom: 0px;
+    border-top: 3px solid var(--Gold);
+    display: none;
+    flex-direction: row;
+}
+
+.screen_tabs .tab-label:hover {
+    background: transparent;
 }
 
 /* headers */
@@ -630,44 +645,27 @@ section:not(.active) {
 
 
 /* Media Querys */
-@media screen and (max-width:930px) {
-    .surahs {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media screen and (max-width:781px) {
     .tabs {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media screen and (max-width:685px) {
-    .surahs {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
 @media screen and (max-width:625px) {
     .tabs {
-        grid-template-columns: repeat(2, 1fr);
-        height: max-content;
+        display: none;
     }
 
-    .tab-label {
-        height: 50px;
-        font-size: 20px;
+    header {
+        border-bottom: 3px solid var(--Gold);
+    }
+
+    .screentabs {
+        display: flex;
     }
 }
 
 @media screen and (max-width:520px) {
-    #prayer {
-        width: 90vw;
-    }
-
-    .prayers {
-        padding: 10px 10px 70px 10px;
-    }
 
     .socials,
     .numbers {
@@ -700,42 +698,9 @@ section:not(.active) {
     }
 }
 
-@media screen and (max-width:440px) {
-
-    .surahInputWrapper,
-    .countryInputWrapper,
-    .showall {
-        width: 93vw;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
-@media screen and (max-width:400px) {
-    #counter_azkar {
-        font-size: 40px;
-        margin-bottom: 10px;
-    }
-}
-
 @media screen and (max-width:385px) {
     .additions {
         font-size: 20px;
-    }
-}
-
-@media screen and (max-width:313px) {
-
-    .surahInputWrapper>input {
-        font-size: 20px;
-    }
-
-    .status {
-        font-size: 15px;
-    }
-
-    #two {
-        font-size: 15px;
     }
 }
 
