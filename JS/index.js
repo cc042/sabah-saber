@@ -71,8 +71,7 @@ const SwitchTheme = new ThemeSwitch()
 const SideBar = new ResponsiveSideBar()
 
 SideBar.Responsivesidebar()
-if (SwitchTheme.darkmode === "true") SwitchTheme.DarkModeDelete()
-if (localStorage.getItem("darked") === "true") { SwitchTheme.DarkModeApply() }
+if (SwitchTheme.darkmode === "true") SwitchTheme.DarkModeApply()
 else { SwitchTheme.DarkModeDelete() }
 
 window.addEventListener("resize", () => { SideBar.Responsivesidebar() })
