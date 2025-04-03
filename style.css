@@ -749,12 +749,14 @@ body.dark-mode .darkmode>svg:last-child {
     background: transparent;
     width: 100%;
     height: 100%;
+    color: var(--Black);
 }
 
 .tabs button {
     font-family: var(--sff);
     font-weight: 700;
     font-size: 25px;
+
 
     &:hover {
         color: var(--Navy-Blue);
