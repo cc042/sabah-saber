@@ -798,7 +798,7 @@ body.dark-mode .darkmode>svg:last-child {
     background: var(--White);
     list-style: none;
     position: fixed;
-    top: 175px;
+    top: calc(95px + 80px);
     left: 50%;
     transform: translateX(-50%);
     max-height: calc(100vh - (95px + 80px));
