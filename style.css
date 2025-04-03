@@ -853,7 +853,7 @@ footer {
     padding: 10px;
     color: var(--Gold);
     font-size: 30px;
-    font-weight:700
+    font-weight: 700
 }
 
 @media screen and (max-width:781px) {
@@ -902,6 +902,12 @@ footer {
     .callus,
     .Follows {
         max-height: 90vh;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    footer {
+        font-size: 6vw;
     }
 }
 
