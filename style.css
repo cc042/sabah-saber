@@ -12,7 +12,7 @@
     outline: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
 }
 
 
@@ -671,10 +671,24 @@ header {
     background: none;
     font-family: var(--sff);
     font-weight: 700;
-    transition: 1s;
+    transition: 0.3s ease;
     position: relative;
     display: inline-block;
     color: var(--Black);
+}
+
+.leftdevsection ul li button::before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    background: var(--Green);
+    height: 3px;
+    width: 0%;
+    transition: 0.3s ease;
+}
+
+.leftdevsection ul li button:hover::before {
+    width: 100%;
 }
 
 .darkmode {
@@ -692,20 +706,6 @@ body.dark-mode .darkmode>svg:first-child {
 
 body.dark-mode .darkmode>svg:last-child {
     display: inline;
-}
-
-.leftdevsection ul li button::before {
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    background: var(--Green);
-    height: 3px;
-    width: 0%;
-    transition: 0.3s ease-in-out;
-}
-
-.leftdevsection ul li button:hover::before {
-    width: 100%;
 }
 
 .hidden,
@@ -806,10 +806,15 @@ body.dark-mode .darkmode>svg:last-child {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     padding: 20px;
     width: 100%;
     z-index: 10000;
+    animation: fade 1s ease 1;
+}
+
+.NavScreen[open] ul {
+    animation: fade 1s ease 1;
 }
 
 .NavScreen li {
@@ -836,13 +841,14 @@ section:not(.active) {
 
 /* headers */
 
-.header {
+.sectionHeader {
     display: flex;
     align-items: center;
+    justify-content: start;
     width: 100%;
     gap: 10px;
     padding: 10px;
-    order: 2;
+    /* order: 2; */
     color: var(--Black);
 }
 
