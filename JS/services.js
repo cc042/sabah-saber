@@ -29,7 +29,7 @@ EstefsarForm.addEventListener("submit", e => {
     const name = estefsarname.value
     const phoneNumber = '+201278838864';
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=مرحبا انا اسمى ${name}%0A اريد الاسفسار عن: ${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=مرحبا انا اسمى${name}%0A اريد الاسفسار عن: ${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
 })
 
